@@ -1,0 +1,76 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# newtonseye
+
+## Login [/login]
+
+### Login [GET]
+
++ Response 200 (application/json)
+
+        {
+            "userId": 0, 
+            "status": "success"
+        }
+
+## Map [/map]
+
+### Map [GET]
+
++ Response 200 (application/json)
+
+        {
+            "threatID": 0,
+            "otherStuff": "whatever"
+        }
+
+## Profile [/profile]
+
+### Profile [GET]
+
++ Response 200 (application/json)
+
+        {
+        
+        }
+
+## Submit [/submit]
+
+### Post a new threat [POST]
+
++ Request (application/json)
+
+        {
+            "threattype": "What type of threat is this?",
+            "choices": [
+                "Trojan",
+                "DDoS",
+                "Malware",
+                "Other"
+            ]
+            
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "What type of threat is this?",
+                "choices": [
+                    {
+                        "choice": "Trojan",
+                    }, {
+                        "choice": "DDoS",
+                    }, {
+                        "choice": "Malware",
+                    }, {
+                        "choice": "Other",
+                    }
+                ]
+            }
