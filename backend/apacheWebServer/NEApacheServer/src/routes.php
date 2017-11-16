@@ -30,8 +30,8 @@ $app->get('/test', function ($request, $response, $args) {
 	$sth->bindParam("address", $address);
 	$sth->bindParam("password", $password);
         $sth->execute();
-        $input['id'] = $this->db->lastInsertId();
-        return $this->response->withJson($input);
+       // $input['id'] = $this->db->lastInsertId();
+        return $this->response->withJson($name);
  });
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
     // Sample log message
