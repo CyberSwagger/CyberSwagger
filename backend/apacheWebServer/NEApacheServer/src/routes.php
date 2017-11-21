@@ -39,12 +39,12 @@ $app->get('/test', function ($request, $response, $args) {
  });
 //add new threat
 $app->post('/threats', function($request, $response){
-	$user_id = $_POST['user_id']
-	$location = $_POST['location']
-	$type = $_POST['type']
-	$severity = $_POST['severity']
-	$description = $_POST['description']
-	$date = $_POST['date']
+	$user_id = $_POST['user_id'];
+	$location = $_POST['location'];
+	$type = $_POST['type'];
+	$severity = $_POST['severity'];
+	$description = $_POST['description'];
+	$date = $_POST['date'];
 	$sql = "INSERT INTO threats (user_id, location, type, severity, description, date) VALUES (:user_id, :location, :type, :severity, :description, :date)";
 	$sth = $this->db->prepare($sql);
 	$sth->bindParam("user_id", $user_id);
