@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { UserSecurity } from '../../domain';
+import { User, Threat } from '../../domain';
 
 @Component({
   selector: 'user-security',
@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class UserSecurityComponent {
 
+  title = 'CyberSwagger | User Security';
   constructor() { }
 
 }

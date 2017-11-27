@@ -10,6 +10,6 @@ import { DomainModule } from '../domain';
 @NgModule({
     imports: [ BrowserModule, FormsModule, DomainModule ],
     declarations: [ LoginComponent, UserSecurityComponent, HomeComponent ],
-    exports: [ LoginComponent ]
+    exports: [ LoginComponent, HomeComponent, UserSecurityComponent ]
 })
 export class CyberModule { }
