@@ -10,7 +10,6 @@ import { DomainModule } from '../domain';
 @NgModule({
     imports: [ BrowserModule, FormsModule, DomainModule ],
     declarations: [ LoginComponent, UserSecurityComponent, HomeComponent ],
-    // bootstrap: [ ProductDetailsComponent, ProductReviewComponent, RatingComponent ],
     exports: [ LoginComponent ]
 })
 export class CyberModule { }

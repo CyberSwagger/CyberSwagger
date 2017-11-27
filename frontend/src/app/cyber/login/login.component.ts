@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//import { UserSecurity } from '../../domain';
+import { User } from '../../domain';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'login',
@@ -9,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class LoginComponent {
   title = 'CyberSwagger | Login';
-  constructor() { }
 
+  constructor(private http: HttpClient) {
+    this.http.get('http://35.164.245.5/test').subscribe(data => {
+      var random = data;
+      console.log(random);
+    });
+  }
 }

@@ -4,6 +4,7 @@ import { DomainModule } from './domain';
 import { AppComponent } from './app.component';
 import { CyberModule } from './cyber/cyber.module';
 import { ReccomendationsComponent } from './reccomendations/reccomendations.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ReccomendationsComponent } from './reccomendations/reccomendations.comp
   imports: [
     BrowserModule,
     DomainModule,
-    CyberModule
+    CyberModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
