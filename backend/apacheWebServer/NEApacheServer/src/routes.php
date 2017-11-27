@@ -12,12 +12,24 @@ $app->get('/test', function ($request, $response, $args) {
 	$test = $sth->fetchAll();
 	return $this->response->withJson($test);
 });
-//$app->get('/login', function($request, $response, $args){
-//	$this->logger->info("/login route");
-//	$username = $_GET['username'];
-//	$password = $_GET['password'];
-//	$sth = $this->db->prepart("SELECT username, password FROM users");
-//});
+$app->post('/login', function($request, $response){
+	$jsonInput = $request->getBody();
+	$data = json_decode($jsonInput,true);
+	$username = $data['username'];
+	$password = $data['password'];
+	$sth = $this->db->prepare("SELECT * FROM users WHERE username=:uname AND password=:pwd");
+	$sth->bindParam("uname", $username);
+	$sth->bindParam("pwd", $password);
+	$sth->execute();
+	$row = $sth->rowCount();
+	if ($row) {
+		return $response->withStatus(200);
+	}
+	else
+		return $response->withStatus(401);
+
+
+});
  // Add a new user
  $app->post('/subscribe', function ($request, $response) {
 	$name = $_POST['name'];
