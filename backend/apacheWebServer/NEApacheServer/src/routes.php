@@ -22,8 +22,10 @@ $app->post('/login', function($request, $response){
 	$sth->bindParam("pwd", $password);
 	$sth->execute();
 	$row = $sth->rowCount();
+	$line = $sth->fetchAll();
 	if ($row) {
-		return $response->withStatus(200);
+		return $this->response->withJson($line); 
+		//return $response->withStatus(200);
 	}
 	else
 		return $response->withStatus(401);
