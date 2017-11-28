@@ -20,6 +20,18 @@ $app->get('/allthreats', function ($request, $response, $args) {
         $test = $sth->fetchAll();
         return $this->response->withJson($test);
 });
+//to display all the threats posted by a particular user: uncomment when tested
+/*
+$app->get('/allthreats/search/[{user}]', function($request, $response, $args){
+	$this->logger->info("/threatsbyuser");
+	$sth = $this->db->prepare("SELECT * FROM threats WHERE user_id=:user");
+	$user = "%".$args['user']."%";
+	$sth->bindParam("user",$query);
+	$sth->execute();
+	$threatsByUser=$sth->fetchAll();
+	return $this->response->withJson($threatsByUser);
+});
+*/
 $app->post('/login', function($request, $response){
 	$jsonInput = $request->getBody();
 	$data = json_decode($jsonInput,true);
@@ -37,8 +49,6 @@ $app->post('/login', function($request, $response){
 	}
 	else
 		return $response->withStatus(401);
-
-
 });
  // Add a new user
  $app->post('/subscribe', function ($request, $response) {
