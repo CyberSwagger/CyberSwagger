@@ -4,13 +4,21 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 
 // Routes
-//sample route
-$app->get('/test', function ($request, $response, $args) {
+//return all users
+$app->get('/allusers', function ($request, $response, $args) {
 	$this -> logger -> info("/test route");
 	$sth = $this->db->prepare("SELECT * FROM users");
 	$sth->execute();
 	$test = $sth->fetchAll();
 	return $this->response->withJson($test);
+});
+//return all threats
+$app->get('/allthreats', function ($request, $response, $args) {
+        $this -> logger -> info("/test route");
+        $sth = $this->db->prepare("SELECT * FROM threats");
+        $sth->execute();
+        $test = $sth->fetchAll();
+        return $this->response->withJson($test);
 });
 $app->post('/login', function($request, $response){
 	$jsonInput = $request->getBody();
@@ -25,7 +33,7 @@ $app->post('/login', function($request, $response){
 	$line = $sth->fetchAll();
 	if ($row) {
 		return $this->response->withJson($line); 
-		//return $response->withStatus(200);
+	//	return $response->withStatus(200);
 	}
 	else
 		return $response->withStatus(401);
@@ -34,12 +42,14 @@ $app->post('/login', function($request, $response){
 });
  // Add a new user
  $app->post('/subscribe', function ($request, $response) {
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$username = $_POST['username'];
-	$phone = $_POST['phone'];
-	$address = $_POST['address'];
-	$password = $_POST['password'];
+	$json = $request->getBody();
+	$data = json_decode($json, true);
+	$name = $data['name'];
+	$email = $data['email'];
+	$username = $data['username'];
+	$phone = $data['phone'];
+	$address = $data['address'];
+	$password = $data['password'];
         $sql = "INSERT INTO users (name, email, username, phone, address, password) VALUES (:name, :email, :username, :phone, :address, :password)";
         $sth = $this->db->prepare($sql);
         $sth->bindParam("name", $name);
@@ -49,26 +59,38 @@ $app->post('/login', function($request, $response){
 	$sth->bindParam("address", $address);
 	$sth->bindParam("password", $password);
         $sth->execute();
-        return $this->response->withJson($name);
+        return $this->response->withJson($data);
  });
 //add new threat
-$app->post('/threats', function($request, $response){
-	$user_id = $_POST['user_id'];
-	$location = $_POST['location'];
-	$type = $_POST['type'];
-	$severity = $_POST['severity'];
-	$description = $_POST['description'];
-	$date = $_POST['date'];
-	$sql = "INSERT INTO threats (user_id, location, type, severity, description, date) VALUES (:user_id, :location, :type, :severity, :description, :date)";
+$app->post('/addthreat', function($request, $response){
+	$json = $request->getBody();
+	$data = json_decode($json, true);
+	$user_id = $data['user_id'];
+	$location = $data['location'];
+	$type = $data['type'];
+	$severity = $data['severity'];
+	$description = $data['description'];
+	$sql = "INSERT INTO threats (user_id, location, type, severity, description) VALUES (:user_id, :location, :type, :severity, :description)";
 	$sth = $this->db->prepare($sql);
 	$sth->bindParam("user_id", $user_id);
 	$sth->bindParam("location",$location);
 	$sth->bindParam("type",$type);
 	$sth->bindParam("severity",$severity);
 	$sth->bindParam("description",$description);
-	$sth->bindParam("date",$date);
 	$sth->execute();
+	return $this->response->withJson($data);
 });
+//update a threat
+//$app->put('/updatethreat/[{user_id}[/{threat_id}]]',function($request,$response,$args) {
+//	$json = $request->getBody();
+//	$data = $json_decode($json, true);
+//	$description = $data['description'];
+//	$sql = "UPDATE threats SET description=:description WHERE user_id=:user_id";
+//      $sth = $this->db->prepare($sql);
+ //       $sth->bindParam("user_id", $args['user_id']);
+  //      $sth->bindParam("task", $input['task']);
+   //     $sth->execute();
+//});
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
     // Sample log message
     $this->logger->info("Slim-Skeleton '/' route");
