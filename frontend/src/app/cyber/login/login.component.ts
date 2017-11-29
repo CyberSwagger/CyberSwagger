@@ -32,6 +32,8 @@ export class LoginComponent {
         let user = response[0];
         let user_id = user.user_id;
         (<any>window).user_id = user_id;
+        (<any>window).user = user;
+
         this.router.navigate(['/home/', user_id]);
       },
       (err) => {

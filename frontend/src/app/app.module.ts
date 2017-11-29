@@ -11,6 +11,7 @@ import { HomeComponent } from './cyber/home/home.component';
 import { UserSecurityComponent } from './cyber/user-security/user-security.component';
 import { RegistrationComponent } from './cyber/registration/registration.component';
 import { DisplayThreatsComponent} from './cyber/display-threats/display-threats.component';
+import { AccountComponent } from './cyber/accounts/account.component';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +33,10 @@ const appRoutes: Routes = [
   {
     path: 'user-security',
     component: UserSecurityComponent
+  },
+  {
+    path: 'account/:id',
+    component: AccountComponent
   },
   {
     path: '**',
