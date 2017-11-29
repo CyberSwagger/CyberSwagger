@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-display-threats',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayThreatsComponent implements OnInit {
 
-  constructor() { }
+  threats: any = [];
+
+  constructor(private http: HttpClient ) {
+    this.http.get("http://35.164.245.5/allthreats").subscribe(
+      (response) => {
+        this.threats = response;
+        console.log(response);
+      }
+    )
+  }
 
   ngOnInit() {
   }

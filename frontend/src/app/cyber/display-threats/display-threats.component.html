@@ -18,12 +18,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>city, state, zip</td>
-                  <td>trojan</td>
-                  <td>4</td>
-                  <td>it just showed up and idk</td>
-                  <td>12/01/2018</td>
+                <tr *ngFor="let threat of this.threats">
+                  <td>{{threat.city + ", " + threat.state + "," + threat.zip}}</td>
+                  <td>{{threat.type}}</td>
+                  <td>{{threat.severity}}</td>
+                  <td>{{threat.description}}</td>
+                  <td>{{threat.date}}</td>
                 </tr>
               </tbody>
             </table>

@@ -39,6 +39,10 @@ const appRoutes: Routes = [
     component: AccountComponent
   },
   {
+    path: 'display-threats',
+    component: DisplayThreatsComponent
+  },
+  {
     path: '**',
     component: HomeComponent
   }
