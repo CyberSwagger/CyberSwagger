@@ -2,6 +2,10 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
+#logo {
+  cursor: pointer;
+}
+
 body {
   padding-top: .1rem;
   padding-bottom: 3rem;
