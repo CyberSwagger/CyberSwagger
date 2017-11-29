@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User, Threat } from '../../domain';
+import { NavComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'user-security',
