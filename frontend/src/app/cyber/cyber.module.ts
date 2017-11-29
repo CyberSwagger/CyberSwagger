@@ -11,10 +11,11 @@ import { RegistrationComponent } from './registration/registration.component';
 import { RouterModule } from '@angular/router';
 
 import { DomainModule } from '../domain';
+import { DisplayThreatsComponent } from './display-threats/display-threats.component';
 
 @NgModule({
     imports: [ BrowserModule, FormsModule, DomainModule, RouterModule ],
-    declarations: [ LoginComponent, UserSecurityComponent, HomeComponent, AccountComponent, NavComponent, RegistrationComponent ],
+    declarations: [ LoginComponent, UserSecurityComponent, HomeComponent, AccountComponent, NavComponent, RegistrationComponent, DisplayThreatsComponent ],
     exports: [ LoginComponent, HomeComponent, UserSecurityComponent, AccountComponent, NavComponent, RegistrationComponent ]
 })
 export class CyberModule { }

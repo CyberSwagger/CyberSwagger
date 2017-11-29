@@ -10,6 +10,8 @@ import { LoginComponent } from './cyber/login/login.component';
 import { HomeComponent } from './cyber/home/home.component';
 import { UserSecurityComponent } from './cyber/user-security/user-security.component';
 import { RegistrationComponent } from './cyber/registration/registration.component';
+import { DisplayThreatsComponent} from './cyber/display-threats/display-threats.component';
+import { AccountComponent } from './cyber/accounts/account.component';
 
 const appRoutes: Routes = [
   {
@@ -17,8 +19,12 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'home',
+    path: 'home/:id',
     component: HomeComponent
+  },
+  {
+    path: 'display-threats',
+    component: DisplayThreatsComponent
   },
   {
     path: 'registration',
@@ -29,8 +35,8 @@ const appRoutes: Routes = [
     component: UserSecurityComponent
   },
   {
-    path: 'reccomendations',
-    component: ReccomendationsComponent
+    path: 'account/:id',
+    component: AccountComponent
   },
   {
     path: '**',
@@ -49,8 +55,7 @@ const appRoutes: Routes = [
     CyberModule,
     HttpClientModule,
     RouterModule.forRoot(
-      appRoutes,
-      {enableTracing: true}
+      appRoutes
     )
   ],
   providers: [],

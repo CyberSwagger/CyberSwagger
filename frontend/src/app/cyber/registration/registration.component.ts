@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { NgModel } from '@angular/forms';
 
 @Component({
@@ -22,7 +22,8 @@ export class RegistrationComponent {
   validated_password = "";
   username = "";
   title = 'CyberSwagger | Login';
-  constructor(private http: HttpClient) {}
+  
+  constructor(private http: HttpClient, private router: Router) {}
 
   submitRegistration() {
     if(! (this.password == this.validated_password)) {
@@ -41,7 +42,7 @@ export class RegistrationComponent {
     }
     this.http.post('http://35.164.245.5/subscribe', postBody).subscribe(
       (response) => {
-        window.location.href = '/login'
+        this.router.navigate(['/login']);
       },
       (error) => {
         console.log(error)
