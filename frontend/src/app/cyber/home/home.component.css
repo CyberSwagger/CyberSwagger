@@ -13,6 +13,11 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+.btn-info{
+  background-color: blue !important;
+  color: white !important;
+  border-color: blue !important;
+}
 .btn{
   background-color: white;
   color: rgba(224, 0, 165, 0.91);
