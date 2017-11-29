@@ -6,4 +6,4 @@ export * from './models/user';
 export * from './models/threat';
 
 // repositories
-export * from './repositories/cyber-repository.service';
+//export * from './repositories/cyber-repository.service';

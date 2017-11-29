@@ -1,0 +1,46 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: .1rem;
+  padding-bottom: 3rem;
+  /*color: #5a5a5a; */
+  background-color: #FFECFA;
+}
+header{
+  background-color: #FFECFA;
+  margin-bottom: 0%;
+}
+
+.nav-item{
+  width: 6%;
+  margin-right: 1%;
+  font-size: 1.6rem;
+
+}
+.other{
+  width: 7.5%;
+}
+.nav-link{
+  color: rgba(224, 0, 165, 0.6);
+
+}
+.account{
+  width: 6%;
+  float: right;
+  margin-left: 72%;
+  text-align: right;
+}
+.navbar-nav{
+  width: 100%;
+}
+.home-nav{
+  width: 4.5%;
+}
+.security-page{
+  width: 10.5%;
+
+}
+.account:hover, .account:focus, .other:hover, .other:focus, .security-page:hover, .security-page:focus {
+}

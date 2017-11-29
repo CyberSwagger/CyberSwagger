@@ -2,12 +2,15 @@ body {
   padding-top: 80px;
   height: 100%;
   width: 100%;
-  background-color: #eee;
+  /* background-color: #eee; */
+  background-color: #FFECFA;
   padding-bottom: 3.5%;
 }
 .cyber-header{
-  margin-left: 36%;
-  font-size: 6rem;
+  margin-left: 30%;
+  font-size: 8.5rem;
+  color: #B0B0B0;
+  font-style: italic;
   font-family: "futura-pt", Helvetica, Arial, sans-serif;
   font-weight: 100;
   padding-bottom: 4%;
@@ -16,11 +19,13 @@ body {
   margin-left: 14%;
   font-family: "futura-pt", Helvetica, Arial, sans-serif;
   font-style: italic;
+  color: 	#909090;
   font-size: 1.6rem;
 }
 .form-signin {
   max-width: 330px;
   padding: 15px;
+  color: 	#909090;
   margin: 0 auto;
 }
 .phone-num{
@@ -70,7 +75,8 @@ body {
   height: 110px; /* Set the fixed height of the footer here */
   line-height: 60px; /* Vertically center the text there */
   /*background-color: #f5f5f5; */
-  background-color: #eee;
+  /*background-color: #eee; */
+  background-color: #FFECFA;
   margin-top: 10%;
 }
 
@@ -82,5 +88,6 @@ body {
 .container {
   width: auto;
   max-width: 100%;
-  background-color: #eee;
+  /* background-color: #eee; */
+  background-color: #FFECFA;
 }
