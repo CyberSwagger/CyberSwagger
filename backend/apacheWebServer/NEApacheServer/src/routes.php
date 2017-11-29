@@ -32,6 +32,7 @@ $app->get('/allthreats/search/[{user}]', function($request, $response, $args){
 	return $this->response->withJson($threatsByUser);
 });
 */
+//login specific user(takes username and password)
 $app->post('/login', function($request, $response){
 	$jsonInput = $request->getBody();
 	$data = json_decode($jsonInput,true);
@@ -44,13 +45,12 @@ $app->post('/login', function($request, $response){
 	$row = $sth->rowCount();
 	$line = $sth->fetchAll();
 	if ($row) {
-		return $this->response->withJson($line); 
-	//	return $response->withStatus(200);
+		return $this->response->withJson($line);
 	}
 	else
 		return $response->withStatus(401);
 });
- // Add a new user
+ //add new user to users database
  $app->post('/subscribe', function ($request, $response) {
 	$json = $request->getBody();
 	$data = json_decode($json, true);
@@ -58,15 +58,19 @@ $app->post('/login', function($request, $response){
 	$email = $data['email'];
 	$username = $data['username'];
 	$phone = $data['phone'];
-	$address = $data['address'];
+	$city = $data['city'];
+	$state = $data['state'];
+	$zip = $data['zip'];
 	$password = $data['password'];
-        $sql = "INSERT INTO users (name, email, username, phone, address, password) VALUES (:name, :email, :username, :phone, :address, :password)";
+        $sql = "INSERT INTO users (name, email, username, phone, city, state, zip, password) VALUES (:name, :email, :username, :phone, :city, :state, :zip, :password)";
         $sth = $this->db->prepare($sql);
         $sth->bindParam("name", $name);
 	$sth->bindParam("email", $email);
 	$sth->bindParam("username", $username);
 	$sth->bindParam("phone", $phone);
-	$sth->bindParam("address", $address);
+	$sth->bindParam("city",$city);
+	$sth->bindParam("state",$state);
+	$sth->bindParam("zip",$zip);
 	$sth->bindParam("password", $password);
         $sth->execute();
         return $this->response->withJson($data);
@@ -76,14 +80,18 @@ $app->post('/addthreat', function($request, $response){
 	$json = $request->getBody();
 	$data = json_decode($json, true);
 	$user_id = $data['user_id'];
-	$location = $data['location'];
+	$city = $data['city'];
+	$state = $data['state'];
+	$zip = $data['zip'];
 	$type = $data['type'];
 	$severity = $data['severity'];
 	$description = $data['description'];
-	$sql = "INSERT INTO threats (user_id, location, type, severity, description) VALUES (:user_id, :location, :type, :severity, :description)";
+	$sql = "INSERT INTO threats (user_id, city, state, zip, type, severity, description) VALUES (:user_id, :city, :state, :zip, :type, :severity, :description)";
 	$sth = $this->db->prepare($sql);
 	$sth->bindParam("user_id", $user_id);
-	$sth->bindParam("location",$location);
+	$sth->bindParam("city",$city);
+	$sth->bindParam("state",$state);
+	$sth->bindParam("zip",$zip);
 	$sth->bindParam("type",$type);
 	$sth->bindParam("severity",$severity);
 	$sth->bindParam("description",$description);
