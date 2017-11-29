@@ -21,13 +21,21 @@ $app->get('/allthreats', function ($request, $response, $args) {
         return $this->response->withJson($test);
 });
 //to display all the threats posted by a particular user
-$app->get('/allthreats/search/{user_id}', function($request, $response, $args){
+$app->get('/allthreats/search/user_id/{user_id}', function($request, $response, $args){
 	$this->logger->info("/threatsbyuser");
 	$sth = $this->db->prepare("SELECT * FROM threats WHERE user_id=:user");
 	$sth->bindParam("user",$args['user_id']);
 	$sth->execute();
 	$threatsByUser = $sth->fetchAll();
 	return $this->response->withJson($threatsByUser);
+});
+$app->get('/allthreats/search/city/{city}', function($request, $response, $args){
+	$this->logger->info("/threatsbycity");
+	$sth = $this->db->prepare("SELECT * FROM threats WHERE city=:city");
+	$sth->bindParam("city", $args['city']);
+	$sth->execute();
+	$threatsByCity = $sth->fetchAll();
+	return $this->response->withJson($threatsByCity);
 });
 //login specific user(takes username and password)
 $app->post('/login', function($request, $response){
