@@ -45,8 +45,8 @@ $app->get('/allthreats/search/state/{state}', function($request, $response, $arg
 	$threatsByState = $sth->fetchAll();
 	return $this->response->withJson($threatsByState);
 });
-/*
-$app->git('/allthreats/search/zip/{zip}', function($request, $response, $args){
+
+$app->get('/allthreats/search/zip/{zip}', function($request, $response, $args){
 	$this->logger->info("/threatsbyzip");
 	$sth = $this->db->prepare("SELECT * FROM threats WHERE zip=:zip");
 	$sth->bindParam("zip",$args['zip']);
@@ -54,7 +54,7 @@ $app->git('/allthreats/search/zip/{zip}', function($request, $response, $args){
 	$threatsByZip = $sth->fetchAll();
 	return $this->response->withJson($threatsByZip);
 });
-*/
+
 //login specific user(takes username and password)
 $app->post('/login', function($request, $response){
 	$jsonInput = $request->getBody();
