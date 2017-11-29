@@ -37,6 +37,14 @@ $app->get('/allthreats/search/city/{city}', function($request, $response, $args)
 	$threatsByCity = $sth->fetchAll();
 	return $this->response->withJson($threatsByCity);
 });
+$app->get('/allthreats/search/state/{state}', function($request, $response, $args){
+	$this->logger->info("/threatsbystate");
+	$sth = $this->db->prepare("SELECT * FROM threats WHERE state=:state");
+	$sth->bindParam("state",$args['state']);
+	$sth->execute();
+	$threatsByState = $sth->fetchAll();
+	return $this->response->withJson($threatsByState);
+});
 //login specific user(takes username and password)
 $app->post('/login', function($request, $response){
 	$jsonInput = $request->getBody();
