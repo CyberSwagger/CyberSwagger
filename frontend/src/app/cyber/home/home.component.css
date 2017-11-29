@@ -3,29 +3,67 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  padding-top: 3rem;
+  padding-top: .1rem;
   padding-bottom: 3rem;
-  color: #5a5a5a;
+  /*color: #5a5a5a; */
+  background-color: #FFECFA;
+  background-image: url("/assets/images/transparentLock.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.btn{
+  background-color: white;
+  color: rgba(224, 0, 165, 0.91);
+  border-color: rgba(224, 0, 165, 0.91);
+}
+.cyber-header{
+  margin-left: 30%;
+  font-size: 8.5rem;
+  color: rgba(224, 0, 165, 0.6);
+  font-style: italic;
+  font-family: "futura-pt", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  padding-bottom: 3%;
+}
+h1{
+  margin-bottom: 2%;
+  font-weight: 300;
+  font-size: 5rem;
+}
+p, span, h3{
+  color: rgba(224, 0, 165, 0.6);
 }
 
-
+footer{
+  margin-top: 5%;
+}
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
 /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 12px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
+  bottom: 8rem;
+  z-index: 0;
+  text-shadow: none;
+  right:13%;
+  left:13%;
 }
-
 /* Declare heights because of positioning of img element */
-.carousel-item {
-  height: 32rem;
-  background-color: #777;
+.carousel-item{
+  height: 45rem;
+  width: 138rem;
+  border-radius: 20px;
+
+
 }
 .carousel-item > img {
   position: absolute;
@@ -34,10 +72,12 @@ body {
   min-width: 100%;
   height: 32rem;
 }
+.first-slide, .second-slide, .third-slide{
+  background-color: rgba(255, 128, 221, 0.10);
+}
 .nav-bar-brand{
   font-weight: 100;
 }
-
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -55,7 +95,6 @@ body {
   margin-left: .75rem;
 }
 
-
 /* Featurettes
 ------------------------- */
 
@@ -70,7 +109,6 @@ body {
   letter-spacing: -.05rem;
 }
 
-
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
@@ -78,8 +116,13 @@ body {
   /* Bump up size of carousel content */
   .carousel-caption p {
     margin-bottom: 1.25rem;
-    font-size: 1.25rem;
+    font-size: 2rem;
     line-height: 1.4;
+    color: rgba(224, 0, 165, 0.6);
+  }
+  .carousel-caption{
+    margin-bottom: 1.25rem;
+    color: rgba(224, 0, 165, 0.6);
   }
 
   .featurette-heading {
@@ -95,12 +138,19 @@ body {
 
 /* ------------------------- */
 
-.nav-item{
-  width: 24%;
+.news{
+  color: rgba(224, 0, 165, 0.6);
+  font-size: 6.9rem;
+  font-weight: 300;
+  margin-left: 25%;
+  margin-bottom: 4%;
+  margin-top: 5.5%;
 }
-.navbar-nav{
-  width: 40%;
+
+.modal-title{
+  margin-left: 32%;
+  font-size: 2rem;
 }
-.home-nav{
-  width: 12%;
+.close{
+  margin-left: 30%;
 }

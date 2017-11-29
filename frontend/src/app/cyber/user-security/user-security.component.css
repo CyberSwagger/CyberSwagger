@@ -1,0 +1,108 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: .1rem;
+  padding-bottom: 3rem;
+  /*color: #5a5a5a; */
+  background-color: #FFECFA;
+  background-image: url("/assets/images/transparentLock.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.btn{
+  background-color: white;
+  color: rgba(224, 0, 165, 0.91);
+  border-color: rgba(224, 0, 165, 0.91);
+}
+.cyber-header{
+  margin-left: 30%;
+  font-size: 8.5rem;
+  color: rgba(224, 0, 165, 0.6);
+  font-style: italic;
+  font-family: "futura-pt", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  padding-bottom: 3%;
+}
+h2{
+  margin-bottom: 2%;
+  font-weight: 400;
+  font-size: 5rem;
+  color: rgba(224, 0, 165, 0.91);
+}
+p, span, h3{
+  color: rgba(224, 0, 165, 0.6);
+}
+h3{
+  margin-left: 19%;
+  font-weight: 400;
+  font-size: 3.6rem;
+  margin-bottom: 4%;
+}
+.articles{
+  margin-left: 14%;
+}
+footer{
+  margin-top: 5%;
+}
+.date{
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: rgba(224, 0, 165, 0.91);
+}
+.lead{
+  margin-top: 1%;
+}
+
+/* Featurettes
+------------------------- */
+
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+  font-size: 1rem;
+  color: rgba(224, 0, 165, 0.91);
+}
+.row{
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-bottom: 4%;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  .featurette-heading {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+/* ------------------------- */
+
+.news{
+  color: rgba(224, 0, 165, 0.6);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-right: 10%;
+}
+
+.modal-title{
+  margin-left: 32%;
+  font-size: 2rem;
+}
+.close{
+  margin-left: 30%;
+}

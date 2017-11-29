@@ -1,0 +1,36 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+html{
+  background-color: #FFECFA;
+}
+body {
+  padding-top: .1rem;
+  padding-bottom: 3rem;
+  /*color: #5a5a5a; */
+  background-color: #FFECFA;
+  background-image: url("/assets/images/transparentLock.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+footer{
+  margin-top: 22.8%;
+}
+h2{
+  margin-bottom: 2%;
+  font-weight: 300;
+  color: rgba(224, 0, 165, 0.6);
+}
+p{
+  color: rgba(224, 0, 165, 0.6);
+  font-weight: 400;
+  font-size: 2rem;
+  margin-left: 2%;
+}
+.container{
+  margin-left: 10%;
+}
+
+/* ------------------------- */

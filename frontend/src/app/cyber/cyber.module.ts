@@ -4,12 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { UserSecurityComponent } from './user-security/user-security.component';
 import { HomeComponent } from './home/home.component';
+import { AccountComponent } from './accounts/account.component';
+import { NavComponent } from './navbar/navbar.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 import { DomainModule } from '../domain';
 
 @NgModule({
     imports: [ BrowserModule, FormsModule, DomainModule ],
-    declarations: [ LoginComponent, UserSecurityComponent, HomeComponent ],
-    exports: [ LoginComponent, HomeComponent, UserSecurityComponent ]
+    declarations: [ LoginComponent, UserSecurityComponent, HomeComponent, AccountComponent, NavComponent, RegistrationComponent ],
+    exports: [ LoginComponent, HomeComponent, UserSecurityComponent, AccountComponent, NavComponent, RegistrationComponent ]
 })
 export class CyberModule { }
