@@ -3,6 +3,8 @@ import { User } from '../../domain';
 import { HttpClient } from '@angular/common/http';
 import { NgModel } from '@angular/forms';
 
+import { RouterLink } from '@angular/router';
+
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
@@ -27,7 +29,7 @@ export class LoginComponent {
       "password": this.password
     }).subscribe(
       (response) => {
-        
+
     },
       (err) => {
         console.log(err)
