@@ -6,7 +6,7 @@ use Slim\Http\Response;
 // Routes
 //return all users
 $app->get('/allusers', function ($request, $response, $args) {
-	$this -> logger -> info("/test route");
+	$this -> logger ->info("/allusers");
 	$sth = $this->db->prepare("SELECT * FROM users");
 	$sth->execute();
 	$test = $sth->fetchAll();
@@ -14,24 +14,25 @@ $app->get('/allusers', function ($request, $response, $args) {
 });
 //return all threats
 $app->get('/allthreats', function ($request, $response, $args) {
-        $this -> logger -> info("/test route");
+        $this -> logger -> info("/allthreats");
         $sth = $this->db->prepare("SELECT * FROM threats");
         $sth->execute();
         $test = $sth->fetchAll();
         return $this->response->withJson($test);
 });
 //to display all the threats posted by a particular user: uncomment when tested
-/*
-$app->get('/allthreats/search/[{user}]', function($request, $response, $args){
+$app->get('/allthreats/search/{user_id}', function($request, $response, $args){
 	$this->logger->info("/threatsbyuser");
+	//$jsonInput = $request->getBody();
+	//$data = json_decode($jsonInput,true);
 	$sth = $this->db->prepare("SELECT * FROM threats WHERE user_id=:user");
-	$user = "%".$args['user']."%";
-	$sth->bindParam("user",$query);
+	//$user = $data['user_id'];
+	$sth->bindParam("user",$args['user_id']);
 	$sth->execute();
-	$threatsByUser=$sth->fetchAll();
+	$threatsByUser = $sth->fetchAll();
 	return $this->response->withJson($threatsByUser);
 });
-*/
+
 //login specific user(takes username and password)
 $app->post('/login', function($request, $response){
 	$jsonInput = $request->getBody();
