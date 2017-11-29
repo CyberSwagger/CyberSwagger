@@ -101,7 +101,7 @@ $app->post('/threats/addthreat', function($request, $response){
 //update a threat
 $app->put('/threats/updatedescription[/{user_id}[/{threat_id}]]',function($request,$response,$args) {
 	$json = $request->getBody();
-	$data = $json_decode($json, true);
+	$data = json_decode($json, true);
 	$user_id = $data['user_id'];
 	$threat_id = $data['threat_id'];
 	$description = $data['description'];
