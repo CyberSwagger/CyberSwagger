@@ -1,0 +1,57 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: .1rem;
+  padding-bottom: 52.5rem;
+  /*color: #5a5a5a; */
+  background-color: #FFECFA;
+  background-image: url("/assets/images/transparentLock.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.btn-info{
+  background-color: blue !important;
+  color: white !important;
+  border-color: blue !important;
+}
+.btn{
+  background-color: white;
+  color: rgba(224, 0, 165, 0.91);
+  border-color: rgba(224, 0, 165, 0.91);
+}
+.cyber-header{
+  margin-left: 30%;
+  font-size: 6rem;
+  color: rgba(224, 0, 165, 0.6);
+  font-family: "futura-pt", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  padding-bottom: 3%;
+}
+h1{
+  margin-bottom: 2%;
+  font-weight: 300;
+  font-size: 5rem;
+}
+h2{
+  margin-bottom: 2%;
+  font-weight: 400;
+  font-size: 5rem;
+  color: rgba(224, 0, 165, 0.91);
+  margin-left: 36%;
+}
+p, span, h3{
+  color: rgba(224, 0, 165, 0.6);
+}
+
+footer{
+  bottom: 0;
+  margin-left: 10%;
+  position: absolute;
+}
+.threat-table{
+  padding-right: 16%;
+}
