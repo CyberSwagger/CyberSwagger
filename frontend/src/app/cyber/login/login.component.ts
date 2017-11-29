@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
 
 export class LoginComponent {
   title = 'CyberSwagger | Login';
-  email = '';
+  username = '';
   password = '';
 
   constructor(private http: HttpClient) {
@@ -25,12 +25,14 @@ export class LoginComponent {
 
   login() {
     this.http.post('http://35.164.245.5/login', {
-      "email": this.email,
+      "username": this.username,
       "password": this.password
     }).subscribe(
       (response) => {
-
-    },
+        console.log(response);
+        let user = response[0];
+        let user_id = user.user_id;
+      },
       (err) => {
         console.log(err)
       });
