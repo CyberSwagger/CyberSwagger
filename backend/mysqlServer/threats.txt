@@ -1,0 +1,17 @@
+USE NewtonsEye;
+
+TRUNCATE threats;
+
+INSERT INTO threats (user_id,city,state,zip,type,severity,description)
+VALUES ('1','Chicago','IL','60607','Malware','2','someone sent malware'),
+('1','Dallas','TX','12345','Trojan','3','someone sent a trojan'),
+('2','Miami','FL','54321','Phishing','1','someone sent phishing emails'),
+('2','Houston','TX','65368','Trojan','3','someone sent a trojan'),
+('3','Seattle','WA','09757','Malware','2','someone sent malware'),
+('3','Boston','MA','79982','Phishing','1','someone sent phishing emails'),
+('4','Chicago','IL','60607','Trojan','3','someone sent a trojan'),
+('4','Long Beach','CA','08750','Malware','2','someone sent malware'),
+('5','Henderson','NV','76534','Phishing','1','someone sent a phishing email'),
+('5','Chandler','AZ','42564','Malware','2','someone sent malware'),
+('6','Chandler','AZ','42564','Malware','2','someone sent malware'),
+('6','Laredo','TX','09778','Trojan','3','someone sent a trojan');
