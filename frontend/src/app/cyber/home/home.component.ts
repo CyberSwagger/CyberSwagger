@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User, Threat } from '../../domain';
 import { NavComponent } from '../navbar/navbar.component';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'home',
@@ -18,7 +19,7 @@ export class HomeComponent {
   threatpostLogo: string;
   lockImg: string;
 
-constructor() {
+constructor(private route: ActivatedRoute) {
     this.imageUrl = '/assets/images/';
     this.hackerLogo = 'hacker.png';
     this.inverseLogo = 'inverse.png';
