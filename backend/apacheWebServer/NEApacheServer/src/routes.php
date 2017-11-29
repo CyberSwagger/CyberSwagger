@@ -20,19 +20,15 @@ $app->get('/allthreats', function ($request, $response, $args) {
         $test = $sth->fetchAll();
         return $this->response->withJson($test);
 });
-//to display all the threats posted by a particular user: uncomment when tested
+//to display all the threats posted by a particular user
 $app->get('/allthreats/search/{user_id}', function($request, $response, $args){
 	$this->logger->info("/threatsbyuser");
-	//$jsonInput = $request->getBody();
-	//$data = json_decode($jsonInput,true);
 	$sth = $this->db->prepare("SELECT * FROM threats WHERE user_id=:user");
-	//$user = $data['user_id'];
 	$sth->bindParam("user",$args['user_id']);
 	$sth->execute();
 	$threatsByUser = $sth->fetchAll();
 	return $this->response->withJson($threatsByUser);
 });
-
 //login specific user(takes username and password)
 $app->post('/login', function($request, $response){
 	$jsonInput = $request->getBody();
@@ -113,6 +109,14 @@ $app->put('/threats/updatedescription[/{user_id}[/{threat_id}]]',function($reque
 	$sth->bindParam("description", $description);
         $sth->execute();
 	return $this->response->withJson($data);
+});
+//get threats grouped by type
+$app->get('/allthreats/bytype', function ($request, $response, $args) {
+        $this -> logger -> info("/allthreatsbytype");
+        $sth = $this->db->prepare("SELECT * FROM threats ORDER BY type");
+        $sth->execute();
+        $data = $sth->fetchAll();
+        return $this->response->withJson($data);
 });
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
     // Sample log message
