@@ -6,6 +6,9 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+.register{
+  font-size: 1rem;
+}
 .cyber-header{
   margin-left: 30%;
   font-size: 8.5rem;

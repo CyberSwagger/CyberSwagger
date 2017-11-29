@@ -1,0 +1,41 @@
+/* Credit to bootsnipp.com for the css for the color graph */
+body{
+  padding-top: 0rem;
+  padding-bottom: 11.6rem;
+  background-color: rgba(255, 128, 221, 0.10);
+}
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+.container{
+}
+h2{
+  font-weight: 300;
+  color: rgba(224, 0, 165, 0.91);
+}
+.register-btn{
+  margin-left: 52%;
+}
+.cyber-header{
+  margin-left: 25%;
+  font-size: 8.5rem;
+  color: rgba(224, 0, 165, 0.91);
+  font-style: italic;
+  font-family: "futura-pt", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  margin-top: 5%;
+  padding-bottom: 4%;
+}
+.cyber-description{
+  margin-left: 2%;
+  font-family: "futura-pt", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  color: rgba(224, 0, 165, 0.91);
+  font-size: 1.6rem;
+}
