@@ -29,6 +29,7 @@ $app->get('/allthreats/search/user_id/{user_id}', function($request, $response, 
 	$threatsByUser = $sth->fetchAll();
 	return $this->response->withJson($threatsByUser);
 });
+//display all threats in a city
 $app->get('/allthreats/search/city/{city}', function($request, $response, $args){
 	$this->logger->info("/threatsbycity");
 	$sth = $this->db->prepare("SELECT * FROM threats WHERE city=:city");
@@ -37,6 +38,7 @@ $app->get('/allthreats/search/city/{city}', function($request, $response, $args)
 	$threatsByCity = $sth->fetchAll();
 	return $this->response->withJson($threatsByCity);
 });
+//display all threats in a state
 $app->get('/allthreats/search/state/{state}', function($request, $response, $args){
 	$this->logger->info("/threatsbystate");
 	$sth = $this->db->prepare("SELECT * FROM threats WHERE state=:state");
@@ -45,7 +47,7 @@ $app->get('/allthreats/search/state/{state}', function($request, $response, $arg
 	$threatsByState = $sth->fetchAll();
 	return $this->response->withJson($threatsByState);
 });
-
+//display all threats in a zipcode
 $app->get('/allthreats/search/zip/{zip}', function($request, $response, $args){
 	$this->logger->info("/threatsbyzip");
 	$sth = $this->db->prepare("SELECT * FROM threats WHERE zip=:zip");
@@ -135,6 +137,18 @@ $app->put('/threats/updatedescription[/{user_id}[/{threat_id}]]',function($reque
 	$sth->bindParam("description", $description);
         $sth->execute();
 	return $this->response->withJson($data);
+});
+//to delete a threat posted by a particular user
+$app->delete('/threats/removethreat[/{user_id}[/{threat_id}]]', function($request, $response, $args){
+	$json = $request->getBody();
+	$data = json_decode($json, true);
+	$user_id = $data['user_id'];
+	$threat_id = $data['threat_id'];
+	$sql =  "DELETE FROM threats WHERE user_id=:user_id AND threat_id=:threat_id";
+        $sth = $this->db->prepare($sql);
+        $sth->bindParam("user_id",$user_id);
+	$sth->bindParam("threat_id",$threat_id);
+	$sth->execute();
 });
 //get threats grouped by type
 $app->get('/allthreats/bytype', function ($request, $response, $args) {
