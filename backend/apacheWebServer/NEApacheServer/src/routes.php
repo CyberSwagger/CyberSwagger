@@ -76,7 +76,7 @@ $app->post('/login', function($request, $response){
         return $this->response->withJson($data);
  });
 //add new threat
-$app->post('/addthreat', function($request, $response){
+$app->post('/threats/addthreat', function($request, $response){
 	$json = $request->getBody();
 	$data = json_decode($json, true);
 	$user_id = $data['user_id'];
@@ -99,16 +99,20 @@ $app->post('/addthreat', function($request, $response){
 	return $this->response->withJson($data);
 });
 //update a threat
-//$app->put('/updatethreat/[{user_id}[/{threat_id}]]',function($request,$response,$args) {
-//	$json = $request->getBody();
-//	$data = $json_decode($json, true);
-//	$description = $data['description'];
-//	$sql = "UPDATE threats SET description=:description WHERE user_id=:user_id";
-//      $sth = $this->db->prepare($sql);
- //       $sth->bindParam("user_id", $args['user_id']);
-  //      $sth->bindParam("task", $input['task']);
-   //     $sth->execute();
-//});
+$app->put('/threats/updatedescription[/{user_id}[/{threat_id}]]',function($request,$response,$args) {
+	$json = $request->getBody();
+	$data = $json_decode($json, true);
+	$user_id = $data['user_id'];
+	$threat_id = $data['threat_id'];
+	$description = $data['description'];
+	$sql = "UPDATE threats SET description=:description WHERE user_id=:user_id AND threat_id=:threat_id";
+        $sth = $this->db->prepare($sql);
+        $sth->bindParam("user_id", $user_id);
+        $sth->bindParam("threat_id", $threat_id);
+	$sth->bindParam("description", $description);
+        $sth->execute();
+	return $this->response->withJson($data);
+});
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
     // Sample log message
     $this->logger->info("Slim-Skeleton '/' route");
