@@ -1,0 +1,11 @@
+USE NewtonsEye;
+
+TRUNCATE users;
+
+INSERT INTO users (name,username,email,password,phone,city,state,zip)
+VALUES ('Enyi','enyi123','enyi@gmail.com','abc123','312-334-5666','Chicago','IL','60607'),
+('Susanna','susanna123','sus@gmail.com','def456','123-456-7899','Dallas','TX','75275'),
+('Jackson','jackson123','jackson@outlook.com','hij789','987-654-3211','Boise','ID','79825'),
+('Emily','emily123','emily@smu.edu','klm123','134-445-6535','Austin','TX','65992'),
+('Nora','nora123','nora@yahoo.com','nop456','132-334-5547','Springfield','IL','78816'),
+('Luke','luke123','luke@sbcglobal.net','qrs789','563-567-4578','Orlando','FL','18275');

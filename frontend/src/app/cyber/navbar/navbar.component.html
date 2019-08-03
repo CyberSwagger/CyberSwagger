@@ -1,14 +1,14 @@
 <header>
   <nav class="navbar navbar-expand-md fixed-top">
-    <img src="{{imageUrl + lockImg}}" alt="Generic placeholder image" width="60" height="60">
+    <img id="logo" src="{{imageUrl + lockImg}}" routerLink="/" routerLinkActive="active" alt="cyberswagger logo" width="60" height="60">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item security-page"><a class="nav-link" href="#">Protect Yourself</a></li>
-        <li class="nav-item other"><a class="nav-link" href="#">In the News</a></li>
-        <li class="nav-item account"><a class="nav-link" href="#">Account</a></li>
+        <li class="nav-item security-page"><a class="nav-link" routerLink="/display-threats" routerLinkActive="active">Protect Yourself</a></li>
+        <li class="nav-item other"><a routerLink="/user-security" routerLinkActive="active" class="nav-link" href="#">In the News</a></li>
+        <li class="nav-item account"><a class="nav-link" routerLinkActive="active" routerLink="/login">Account</a></li>
       </ul>
     </div>
   </nav>

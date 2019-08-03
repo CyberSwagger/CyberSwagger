@@ -2,13 +2,16 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
+#logo {
+  cursor: pointer;
+}
 body {
-  padding-top: .1rem;
   padding-bottom: 3rem;
-  /*color: #5a5a5a; */
   background-color: #FFECFA;
 }
+
 header{
+  padding-bottom: 0;
   background-color: #FFECFA;
   margin-bottom: 0%;
 }
@@ -17,8 +20,8 @@ header{
   width: 6%;
   margin-right: 1%;
   font-size: 1.6rem;
-
 }
+
 .other{
   width: 7.5%;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User, Threat } from '../../domain';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'account',
@@ -10,6 +11,14 @@ import { HttpClient } from '@angular/common/http';
 
 export class AccountComponent {
   title = 'CyberSwagger | My Account';
-  constructor() { }
+  user = {};
+
+  constructor(private route: ActivatedRoute, private http: HttpClient) {
+      route.params.subscribe(
+        item => {
+          console.log(item);
+        }
+      )
+  }
 
 }
